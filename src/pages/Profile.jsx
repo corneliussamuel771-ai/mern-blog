@@ -118,7 +118,12 @@ export default function Profile({ posts }) {
 
             <div>
               <h3 style={themeStyles.postHeading}>{post.title}</h3>
-              <p style={themeStyles.postBody}>{post.body?.slice(0, 120)}...</p>
+              <div
+                style={themeStyles.postBody}
+                dangerouslySetInnerHTML={{
+                  __html: post.body?.slice(0, 120) + "...",
+                }}
+              ></div>
               <div style={themeStyles.meta}>
                 ❤️ {post.likes?.length || 0} likes
               </div>
