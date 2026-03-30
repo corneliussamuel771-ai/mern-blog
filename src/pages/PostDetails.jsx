@@ -6,12 +6,12 @@ import { AuthContext } from "../context/AuthContext.jsx";
 import Responses from "../components/Response.jsx";
 import { BlogForm } from "./Create.jsx";
 import { api } from "../service/axios.js";
+import { BASE_URL } from "../constants.js";
 
 export default function PostDetails() {
   const { id } = useParams();
   const navigate = useNavigate();
   const { user } = useContext(AuthContext);
-  const BASE_URL = import.meta.env.VITE_BASE_URL || "http://localhost:5000";
 
   const [post, setPost] = useState(null);
   const [title, setTitle] = useState("");

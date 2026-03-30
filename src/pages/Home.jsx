@@ -4,12 +4,11 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../context/AuthContext.jsx";
 import { fetchPosts } from "../service/post.js";
 import { api } from "../service/axios.js";
+import { BASE_URL } from "../constants.js";
 
 export default function Home() {
   const navigate = useNavigate();
   const { user } = useContext(AuthContext);
-  const BASE_URL = import.meta.env.VITE_BASE_URL || "http://localhost:5000";
-
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
