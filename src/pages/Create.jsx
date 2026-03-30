@@ -4,6 +4,7 @@ import toast from "react-hot-toast";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { ThemeContext } from "../context/ThemeContext.jsx"; // <-- import theme
+import { BASE_URL } from "../constants.js";
 
 export const BlogForm = ({ data, setData }) => {
   const editorContainerRef = useRef(null);
@@ -57,7 +58,6 @@ export default function Create() {
 
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
-  const BASE_URL = import.meta.env.VITE_BASE_URL || "http://localhost:5000";
 
   // AUTO SAVE EFFECT
   useEffect(() => {
