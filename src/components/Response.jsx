@@ -88,7 +88,7 @@ const styles = {
     outline: "none",
     display: "flex",
     gap: "1rem",
-    alignItems:"center"
+    alignItems: "center",
   },
 
   textarea: {
@@ -108,13 +108,13 @@ const styles = {
   button: {
     background: "#000",
     width: 40,
-    height:40,
-    padding:0,
+    height: 40,
+    padding: 0,
     border: "none",
-    display:"flex",
-    alignItems:"center",
-    justifyContent:"center",
-    borderRadius:"50%",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: "50%",
     fontSize: "13px",
     color: "#c2c2c2d8",
     cursor: "pointer",
