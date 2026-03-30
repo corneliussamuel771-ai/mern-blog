@@ -1,0 +1,102 @@
+/* pages/Edit.css */
+
+.edit-container {
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.edit-title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.edit-input,
+.edit-textarea {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 16px;
+  border-radius: 6px;
+  background-color: white;
+  color: black;
+  border: none;
+  outline: none;
+  transition: border 0.2s ease;
+}
+
+.edit-input:focus,
+.edit-textarea:focus {
+  border-color: #0d6efd;
+}
+
+.edit-textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.edit-button {
+  padding: 12px;
+  background: #0d6efd;
+  color: #ffffff;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease-in, transform 0.1s ease;
+}
+
+.edit-button:hover {
+  background: #0b5ed7;
+  transform: translateY(-1px);
+}
+
+.loading-text {
+  text-align: center;
+  margin-top: 80px;
+  font-size: 18px;
+  color: #666;
+}
+
+./* Add these to the end of your Edit.css */
+
+/* Hide the raw file input */
+.uploads {
+  display: none;
+}
+
+/* Styled label acting as a button */
+.upload-label {
+  display: inline-block;
+  padding: 12px;
+  background-color: #0d6efd;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: center;
+  font-weight: 600;
+  margin-top: 10px;
+  transition: background 0.2s ease;
+}
+
+.upload-label:hover {
+  background-color: #0b5ed7;
+}
+
+/* Preview image styling */
+.preview-image {
+  width: 100%;
+  margin-top: 15px;
+  border-radius: 6px;
+  max-height: 300px;
+  object-fit: cover;
+}
