@@ -33,16 +33,19 @@ export default function Nav() {
       <div style={styles.inner}>
         <h2 style={styles.logo}>MyBlog</h2>
 
-        {/* Hamburger menu */}
-        {isMobile && (
-          <button
-            style={styles.menuBtn}
-            onClick={() => setOpen(!open)}
-            aria-label="Toggle menu"
-          >
-            ☰
-          </button>
-        )}
+        <div style={styles.leftSection}>
+          <h2 style={styles.logo}>MyBlog</h2>
+
+          {isMobile && (
+            <button
+              style={styles.menuBtn}
+              onClick={() => setOpen(!open)}
+              aria-label="Toggle menu"
+            >
+              ☰
+            </button>
+          )}
+        </div>
 
         {/* Links */}
         <div
@@ -164,6 +167,7 @@ const styles = {
     border: "none",
     cursor: "pointer",
     color: "inherit",
+    marginLeft: "auto",
     zIndex: 1100,
   },
   links: {
@@ -196,5 +200,12 @@ const styles = {
     color: "#6b6b6b",
     fontSize: "1.1rem",
     outline: "none",
+  },
+
+  leftSection: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    width: "100%",
   },
 };
