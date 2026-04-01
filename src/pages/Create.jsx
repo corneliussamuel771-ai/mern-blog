@@ -38,6 +38,14 @@ export const BlogForm = ({ data, setData }) => {
         style={styles.file}
       />
 
+      {data?.coverImage && (
+        <img
+          src={URL.createObjectURL(data.coverImage)}
+          alt="preview"
+          style={{ width: "100%", marginBottom: "20px", borderRadius: "8px" }}
+        />
+      )}
+
       <Editor
         content={data.body}
         setContent={(body) => setData({ ...data, body })}
