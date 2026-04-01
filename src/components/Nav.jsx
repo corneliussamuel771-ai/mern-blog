@@ -30,108 +30,102 @@ export default function Nav() {
         color: darkMode ? "white" : "#000",
       }}
     >
-      <div style={styles.inner}>
-        <h2 style={styles.logo}>MyBlog</h2>
-
-        <div style={styles.leftSection}>
-          <h2 style={styles.logo}>MyBlog</h2>
-
-          {isMobile && (
-            <button
-              style={styles.menuBtn}
-              onClick={() => setOpen(!open)}
-              aria-label="Toggle menu"
-            >
-              ☰
-            </button>
-          )}
-        </div>
-
-        {/* Links */}
-        <div
-          style={{
-            ...styles.links,
-            flexDirection: isMobile ? "column" : "row",
-            position: isMobile ? "absolute" : "static",
-            top: isMobile ? "60px" : "auto",
-            right: isMobile ? 0 : "auto",
-            width: isMobile ? "100%" : "auto",
-            maxHeight: isMobile ? (open ? "500px" : "0") : "none",
-            overflow: isMobile ? "hidden" : "visible",
-            background: isMobile
-              ? darkMode
-                ? "#121212"
-                : "white"
-              : "transparent",
-            padding: isMobile ? "10px 20px" : "0",
-            borderRadius: isMobile ? "0 0 6px 6px" : "0",
-            boxShadow: isMobile ? "0 2px 12px rgba(0,0,0,0.1)" : "none",
-            transition: "all 0.3s ease",
-            zIndex: 1000,
-            display: isMobile ? "flex" : "flex",
-          }}
-        >
-          <Link
-            style={{ ...styles.link, color: darkMode ? "white" : "#000" }}
-            to="/"
-            onClick={() => setOpen(false)}
+      <div style={styles.leftSection}>
+        {isMobile && (
+          <button
+            style={styles.menuBtn}
+            onClick={() => setOpen(!open)}
+            aria-label="Toggle menu"
           >
-            Home
-          </Link>
-
-          {user ? (
-            <>
-              <Link
-                style={{ ...styles.link, color: darkMode ? "white" : "#000" }}
-                to="/create"
-                onClick={() => setOpen(false)}
-              >
-                Write
-              </Link>
-              <Link
-                style={{ ...styles.link, color: darkMode ? "white" : "#000" }}
-                to="/profile"
-                onClick={() => setOpen(false)}
-              >
-                Profile
-              </Link>
-              <button
-                style={{
-                  ...styles.linkBtn,
-                  color: darkMode ? "white" : "#000",
-                }}
-                onClick={() => {
-                  handleLogout();
-                  setOpen(false);
-                }}
-              >
-                Logout
-              </button>
-            </>
-          ) : (
-            <>
-              <Link
-                style={{ ...styles.link, color: darkMode ? "white" : "#000" }}
-                to="/login"
-                onClick={() => setOpen(false)}
-              >
-                Login
-              </Link>
-              <Link
-                style={{ ...styles.link, color: darkMode ? "white" : "#000" }}
-                to="/register"
-                onClick={() => setOpen(false)}
-              >
-                Sign Up
-              </Link>
-            </>
-          )}
-
-          {/* Dark Mode Toggle */}
-          <button style={styles.darkBtn} onClick={() => setDarkMode(!darkMode)}>
-            {darkMode ? "☀️" : "🌙"}
+            ☰
           </button>
-        </div>
+        )}
+      </div>
+
+      {/* Links */}
+      <div
+        style={{
+          ...styles.links,
+          flexDirection: isMobile ? "column" : "row",
+          position: isMobile ? "absolute" : "static",
+          top: isMobile ? "60px" : "auto",
+          right: isMobile ? 0 : "auto",
+          width: isMobile ? "100%" : "auto",
+          maxHeight: isMobile ? (open ? "500px" : "0") : "none",
+          overflow: isMobile ? "hidden" : "visible",
+          background: isMobile
+            ? darkMode
+              ? "#121212"
+              : "white"
+            : "transparent",
+          padding: isMobile ? "10px 20px" : "0",
+          borderRadius: isMobile ? "0 0 6px 6px" : "0",
+          boxShadow: isMobile ? "0 2px 12px rgba(0,0,0,0.1)" : "none",
+          transition: "all 0.3s ease",
+          zIndex: 1000,
+          display: isMobile ? "flex" : "flex",
+        }}
+      >
+        <Link
+          style={{ ...styles.link, color: darkMode ? "white" : "#000" }}
+          to="/"
+          onClick={() => setOpen(false)}
+        >
+          Home
+        </Link>
+
+        {user ? (
+          <>
+            <Link
+              style={{ ...styles.link, color: darkMode ? "white" : "#000" }}
+              to="/create"
+              onClick={() => setOpen(false)}
+            >
+              Write
+            </Link>
+            <Link
+              style={{ ...styles.link, color: darkMode ? "white" : "#000" }}
+              to="/profile"
+              onClick={() => setOpen(false)}
+            >
+              Profile
+            </Link>
+            <button
+              style={{
+                ...styles.linkBtn,
+                color: darkMode ? "white" : "#000",
+              }}
+              onClick={() => {
+                handleLogout();
+                setOpen(false);
+              }}
+            >
+              Logout
+            </button>
+          </>
+        ) : (
+          <>
+            <Link
+              style={{ ...styles.link, color: darkMode ? "white" : "#000" }}
+              to="/login"
+              onClick={() => setOpen(false)}
+            >
+              Login
+            </Link>
+            <Link
+              style={{ ...styles.link, color: darkMode ? "white" : "#000" }}
+              to="/register"
+              onClick={() => setOpen(false)}
+            >
+              Sign Up
+            </Link>
+          </>
+        )}
+
+        {/* Dark Mode Toggle */}
+        <button style={styles.darkBtn} onClick={() => setDarkMode(!darkMode)}>
+          {darkMode ? "☀️" : "🌙"}
+        </button>
       </div>
     </nav>
   );
